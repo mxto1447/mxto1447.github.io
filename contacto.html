@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Colegio José Domingo de Santistevan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo"><img src="assets/images/logo.png" alt="Logo Colegio Santistevan"></a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="institucion.html">Institución</a></li>
+                    <li><a href="niveles.html">Niveles</a></li>
+                    <li><a href="admisiones.html">Admisiones</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="social-sidebar">
+        <a href="https://www.facebook.com/uesantistevan/?locale=es_LA" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/uesantistevan.jbg/?hl=es" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="wa.me/+593959411791" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+
+    <main>
+        <section class="section">
+            <div class="container fade-in-element">
+                <div class="text-center">
+                    <h2>Contáctanos</h2>
+                    <p class="subtitle">¿Interesado en una matrícula? Completa el formulario y nuestro equipo de admisiones se pondrá en contacto contigo a la brevedad.</p>
+                </div>
+                
+                <div class="form-container">
+                    <form action="mailto:admisiones@santistevan.edu.ec" method="POST" enctype="text/plain">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nombre-padre">Nombre del Padre/Madre/Representante</label>
+                                <input type="text" id="nombre-padre" name="Nombre del Representante" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico de Contacto</label>
+                                <input type="email" id="email" name="Email de Contacto" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nombre-estudiante">Nombre Completo del Aspirante</label>
+                                <input type="text" id="nombre-estudiante" name="Nombre del Aspirante" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="grado">Grado/Nivel al que Aplica</label>
+                                <select id="grado" name="Grado de Interés" required>
+                                    <option value="" disabled selected>Selecciona un nivel...</option>
+                                    <option value="Inicial 1">Inicial 1</option>
+                                    <option value="Inicial 2">Inicial 2</option>
+                                    <option value="Primero EGB">Primero EGB</option>
+                                    <option value="Segundo EGB">Segundo EGB</option>
+                                    <option value="Tercero EGB">Tercero EGB</option>
+                                    <option value="Cuarto EGB">Cuarto EGB</option>
+                                    <option value="Quinto EGB">Quinto EGB</option>
+                                    <option value="Sexto EGB">Sexto EGB</option>
+                                    <option value="Séptimo EGB">Séptimo EGB</option>
+                                    <option value="Octavo EGB">Octavo EGB</option>
+                                    <option value="Noveno EGB">Noveno EGB</option>
+                                    <option value="Décimo EGB">Décimo EGB</option>
+                                    <option value="Primero BGU">Primero BGU</option>
+                                    <option value="Segundo BGU">Segundo BGU</option>
+                                    <option value="Tercero BGU">Tercero BGU</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="mensaje">Mensaje Adicional</label>
+                                <textarea id="mensaje" name="Mensaje" placeholder="Si tienes alguna pregunta específica, escríbela aquí..."></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <button type="submit" class="btn btn-principal">Enviar Solicitud de Información</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-column"><p>Colegio José Domingo de Santistevan.<br>Más de 125 años formando líderes con excelencia académica y valores sólidos.</p></div>
+            <div class="footer-column"><h4>Navegación</h4><ul><li><a href="index.html">Inicio</a></li><li><a href="institucion.html">Institución</a></li><li><a href="niveles.html">Niveles</a></li><li><a href="admisiones.html">Admisiones</a></li></ul></div>
+            <div class="footer-column"><h4>Ubicación</h4><p><i class="fas fa-map-marker-alt"></i>Av.Pedro Menéndez Gilbert, Ingreso a Puerto Santa Ana 123
+                Guayaquil – Ecuador</p><p><i class="fas fa-phone-alt"></i>0959411791
+            </p></div>
+            <div class="footer-column"><h4>Síguenos</h4><div class="social-icons"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Colegio José Domingo de Santistevan. Todos los derechos reservados.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

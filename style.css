@@ -1,0 +1,235 @@
+/* === FUENTE Y VARIABLES GLOBALES === */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+
+:root {
+    --naranja: #FF6F00;
+    --azul-profundo: #0D2C54;
+    --azul-texto: #1E3A8A;
+    --fondo: #FFFFFF;
+    --fondo-seccion: #f8f9fa;
+    --texto-principal: #111827;
+    --texto-secundario: #6B7280;
+    --borde-suave: #e5e7eb;
+    --radio-borde: 10px;
+    --sombra-sutil: 0px 4px 6px -1px rgba(0, 0, 0, 0.05), 0px 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --sombra-interactiva: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --transicion-rapida: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === RESET Y ESTILOS GLOBALES === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto-principal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-top: 85px;
+}
+
+/* === TIPOGRAFÍA === */
+h1, h2, h3, h4 { font-weight: 800; color: var(--azul-profundo); line-height: 1.2; }
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; margin-bottom: 1rem; text-align: center;}
+h3 { font-size: 1.5rem; color: var(--azul-texto); margin-bottom: 1rem;}
+p { line-height: 1.7; color: var(--texto-secundario); margin-bottom: 1rem; }
+a { color: var(--naranja); text-decoration: none; transition: var(--transicion-rapida); }
+a:hover { filter: brightness(1.1); }
+.text-center { text-align: center; }
+.subtitle {
+    font-size: 1.15rem;
+    color: var(--texto-secundario);
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+}
+
+/* === LAYOUT Y COMPONENTES === */
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.section { padding: 100px 0; }
+.section.bg-seccion { background-color: var(--fondo-seccion); }
+.grid-2-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+.btn { display: inline-block; padding: 14px 28px; border-radius: var(--radio-borde); font-weight: 700; text-align: center; cursor: pointer; transition: var(--transicion-rapida); border: 2px solid transparent; }
+.btn-principal { background-color: var(--naranja); color: var(--fondo); }
+.btn-principal:hover { background-color: var(--fondo); color: var(--naranja); border-color: var(--naranja); transform: translateY(-3px); box-shadow: var(--sombra-interactiva); }
+
+/* === HEADER ELEGANTE === */
+header { position: fixed; top: 0; left: 0; width: 100%; height: 85px; background-color: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--borde-suave); z-index: 1000; }
+header .container { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+.logo img { height: 45px; }
+.nav-menu ul { display: flex; list-style: none; }
+.nav-menu a { color: var(--texto-principal); font-weight: 500; padding: 10px 20px; position: relative; }
+.nav-menu a::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background-color: var(--naranja); transition: var(--transicion-rapida); }
+.nav-menu a:hover::after { width: 40%; }
+.nav-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+
+/* === HERO SECTION REFINADO === */
+.hero-grid {
+    display: grid;
+    /* La columna del texto (2fr) ahora es el doble que la de la imagen (1fr) */
+    grid-template-columns: 2fr 1fr; 
+    align-items: center;
+    gap: 60px;
+}
+.hero { padding: 80px 0; }
+.hero-title-main { font-size: 4rem; }
+.hero-title-sub { color: var(--naranja); font-size: 2.5rem; font-weight: 700; margin: 0 0 30px 0; }
+.hero-image img { width: 250px; border-radius: var(--radio-borde); box-shadow: var(--sombra-interactiva); }
+
+/* === TARJETAS === */
+.card { background: var(--fondo); padding: 40px; border: 1px solid var(--borde-suave); border-radius: var(--radio-borde); transition: var(--transicion-rapida); }
+.card:hover { transform: translateY(-10px); box-shadow: var(--sombra-interactiva); border-color: transparent; }
+.card i { font-size: 30px; color: var(--naranja); margin-bottom: 20px; display: block; }
+
+/* === PÁGINA INSTITUCIÓN === */
+.tabs-container { display: flex; justify-content: center; margin-bottom: 40px; border-bottom: 1px solid var(--borde-suave); }
+.tab-button { padding: 15px 30px; cursor: pointer; background: none; border: none; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1rem; font-weight: 700; color: var(--texto-secundario); position: relative; }
+.tab-button.active { color: var(--naranja); }
+.tab-button.active::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background-color: var(--naranja); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* === FOOTER PROFESIONAL === */
+.main-footer { background-color: var(--azul-profundo); color: rgba(255, 255, 255, 0.7); padding: 80px 0 0 0; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.main-footer h4 { color: var(--fondo); font-size: 1.1rem; margin-bottom: 1rem; }
+.main-footer a, .main-footer p { color: rgba(255, 255, 255, 0.7); font-size: 0.95rem; }
+.main-footer a:hover { color: var(--naranja); }
+.main-footer ul { list-style: none; }
+.main-footer ul li { margin-bottom: 0.5rem; }
+.footer-column p i { margin-right: 10px; }
+.social-icons a { display: inline-block; width: 40px; height: 40px; line-height: 40px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 50%; color: rgba(255, 255, 255, 0.7); margin-right: 10px; }
+.social-icons a:hover { background-color: var(--naranja); border-color: var(--naranja); color: var(--fondo); }
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 25px 0; margin-top: 40px; text-align: center; font-size: 0.9rem; }
+
+/* === SIDEBAR SOCIAL FIJA === */
+.social-sidebar { position: fixed; top: 50%; right: 0; transform: translateY(-50%); z-index: 999; }
+.social-sidebar a { display: block; width: 50px; height: 50px; line-height: 50px; text-align: center; background-color: var(--fondo); color: var(--azul-profundo); font-size: 20px; margin-bottom: 2px; box-shadow: var(--sombra-sutil); transition: var(--transicion-rapida); }
+.social-sidebar a:hover { background-color: var(--naranja); color: var(--fondo); transform: translateX(-10px); border-radius: var(--radio-borde) 0 0 var(--radio-borde); }
+
+/* === ANIMACIÓN SUTIL Y ÚNICA === */
+.fade-in-element { opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.fade-in-element.is-visible { opacity: 1; transform: translateY(0); }
+
+/* === MEDIA QUERIES PARA RESPONSIVE === */
+@media (max-width: 992px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2rem; }
+    .grid-2-cols { grid-template-columns: 1fr; }
+    .nav-menu { position: fixed; top: 85px; left: 0; width: 100%; background-color: var(--fondo); flex-direction: column; align-items: center; padding: 20px 0; transform: translateY(-150%); transition: transform 0.3s ease-in-out; }
+    .nav-menu.active { transform: translateY(0); }
+    .nav-menu ul { flex-direction: column; text-align: center; }
+    .nav-menu li { margin: 15px 0; }
+    .nav-toggle { display: block; }
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* La columna del form es 1.5 veces más ancha */
+    gap: 50px;
+    text-align: left;
+    margin-top: 50px;
+}
+
+.contact-info h3 {
+    color: var(--azul-oscuro);
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    color: var(--naranja);
+    font-size: 20px;
+    margin-right: 15px;
+    width: 25px; /* Para alinear el texto verticalmente */
+}
+
+/* Estilos para el formulario */
+.contact-form {
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--texto-oscuro);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: var(--radio-borde);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--naranja);
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-principal {
+    background-color: var(--naranja);
+    color: var(--blanco);
+    padding: 15px 30px;
+    border-radius: var(--radio-borde);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 2px solid var(--naranja);
+}
+.btn-principal:hover {
+    background-color: transparent;
+    color: var(--naranja);
+    transform: translateY(-3px);
+}
+
+/* === ESTILOS PARA IMÁGENES EN TARJETAS DE NIVELES === */
+/* === ESTILOS PARA TARJETAS CON IMAGEN === */
+.card-with-image {
+    padding: 0; /* Eliminamos el padding de la tarjeta principal */
+}
+
+.card-image-header {
+    height: 220px;
+    background-size: cover; /* Asegura que la imagen cubra todo el espacio */
+    background-position: center; /* Centra la imagen */
+    border-radius: var(--radio-borde) var(--radio-borde) 0 0; /* Redondea las esquinas superiores */
+}
+
+.card-with-image .card-content {
+    padding: 40px; /* Aplicamos el padding solo al contenedor del texto */
+}
+
+/* En móvil, ajustamos el margen negativo para que se vea bien */
+@media (max-width: 768px) {
+    .card-image {
+        margin-left: -40px;
+        margin-right: -40px;
+    }
+}
